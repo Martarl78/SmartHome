@@ -1,0 +1,212 @@
+:root {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-blue-500: #2563eb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-900: #111827;
+  --color-green: #10b981;
+  --color-red: #ef4444;
+
+  --bg-color: var(--color-gray-100);
+  --text-color: var(--color-gray-900);
+  --widget-bg: var(--color-white);
+  --accent-color: var(--color-blue-500);
+  --alert-color: var(--color-red);
+}
+
+/* Evitar scroll horizontal */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden; /* evitar el scroll horizontal */
+}
+
+/* Modo oscuro */
+#theme-toggle:checked ~ .container {
+  --bg-color: var(--color-gray-900);
+  --text-color: var(--color-gray-100);
+  --widget-bg: #1f2937;
+  --accent-color: #60a5fa;
+  --alert-color: #f87171;
+}
+
+.container {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+/* Barra superior */
+.header {
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: var(--widget-bg);
+  box-shadow: 0 0 1em rgba(0,0,0,0.1);
+  border-bottom: 0.1rem solid rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 10;
+}
+
+.toggle-label {
+  background-color: var(--accent-color);
+  color: var(--color-white);
+  padding: 0.8em 1.2em;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+/* Estructura del widget */
+.widget {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1em;
+  overflow: hidden;
+  background-color: var(--widget-bg);
+  box-shadow: 0 0 1em rgba(0,0,0,0.1);
+}
+
+/* Imagen arriba */
+.widget-image {
+  height: 12rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Texto abajo */
+.widget-content {
+  padding: 1.5rem;
+  background: var(--widget-bg);
+  color: var(--text-color);
+}
+
+.widget-content h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5em;
+}
+
+.widget-content .value {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.lights-status {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  margin-top: 0.5em;
+}
+
+.alerta {
+  color: var(--alert-color);
+}
+
+.player-controls {
+  display: flex;
+  gap: 1em;
+  margin-top: 0.5em;
+}
+
+.player-controls button {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--accent-color);
+  cursor: pointer;
+}
+
+.lista-recordatorios {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-recordatorios li {
+  font-size: 1rem;
+  margin-bottom: 0.4em;
+  background-color: rgba(0,0,0,0.05);
+  padding: 0.5em 0.7em;
+  border-radius: 0.5em;
+}
+
+/* Modo oscuro para recordatorios */
+#theme-toggle:checked ~ .container .lista-recordatorios li {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* Grid escritorio */
+@media (min-width: 600px) {
+  .dashboard {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+/* Imágenes del modo día */
+.temperatura .widget-image { 
+  background-image: url("Resources/Temperatura.png"); 
+}
+.luces .widget-image { 
+  background-image: url("Resources/Luces.png"); 
+}
+.humedad .widget-image { 
+  background-image: url("Resources/Humedad.png"); 
+}
+.energia .widget-image { 
+  background-image: url("Resources/ConsumoEnergetico.png"); 
+}
+.camaras .widget-image { 
+  background-image: url("Resources/Camaras.png"); 
+}
+.seguridad .widget-image { 
+  background-image: url("Resources/Alarmas.png"); 
+}
+.musica .widget-image { 
+  background-image: url("Resources/Musica.png"); 
+}
+.recordatorios .widget-image { 
+  background-image: url("Resources/Recordatorios.png"); 
+}
+
+/* Imágenes del modo oscuro */
+#theme-toggle:checked ~ .container .temperatura .widget-image { 
+  background-image: url("Resources/TemperaturaOscuro.png"); 
+}
+#theme-toggle:checked ~ .container .luces .widget-image { 
+  background-image: url("Resources/LucesOscuro.png"); 
+}
+#theme-toggle:checked ~ .container .humedad .widget-image { 
+  background-image: url("Resources/HumedadOscuro.png"); 
+}
+#theme-toggle:checked ~ .container .energia .widget-image { 
+  background-image: url("Resources/ConsumoEnergeticoOscuro.png"); 
+}
+#theme-toggle:checked ~ .container .camaras .widget-image { 
+  background-image: url("Resources/CamarasOscuro.png"); 
+}
+#theme-toggle:checked ~ .container .seguridad .widget-image { 
+  background-image: url("Resources/AlarmasOscuro.png"); 
+}
+#theme-toggle:checked ~ .container .musica .widget-image { 
+  background-image: url("Resources/MusicaOscuro.png"); 
+}
+#theme-toggle:checked ~ .container .recordatorios .widget-image { 
+  background-image: url("Resources/RecordatoriosOscuro.png"); 
+}

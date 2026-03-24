@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="day">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Hogar Inteligente</title>
+    <link rel="stylesheet" href="EstiloIndex.css">
+</head>
+<body>
+
+<input type="checkbox" id="theme-toggle" hidden />
+<div class="container">
+    <header class="header">
+      <h1>Mi Hogar Inteligente</h1>
+      <label for="theme-toggle" class="toggle-label">Modo Oscuro</label>
+    </header>
+
+    <main class="dashboard">
+
+      <section class="widget temperatura">
+        <div class="widget-image"></div>
+        <div class="widget-content">
+          <h2>🌡️Temperatura</h2>
+          <p class="value">18°C</p>
+        </div>
+      </section>
+
+      <section class="widget luces">
+        <div class="widget-image"></div>
+        <div class="widget-content">
+          <h2>💡Luces</h2>
+          <p class="value">Encendidas: 3</p>
+          <div class="lights-status">
+            <span>3 ON</span>
+            <span>5 OFF</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="widget humedad">
+        <div class="widget-image"></div>
+        <div class="widget-content">
+          <h2>💧Humedad</h2>
+          <p class="value">45%</p>
+        </div>
+      </section>
+
+      <section class="widget energia">
+        <div class="widget-image"></div>
+        <div class="widget-content">
+          <h2>⚡Consumo Energético</h2>
+          <p class="value">1.9 kWh</p>
+        </div>
+      </section>
+
+      <section class="widget camaras">
+        <div class="widget-image"></div>
+        <div class="widget-content">
+          <h2>🎥Cámaras</h2>
+          <p class="value">1 Activa</p>
+        </div>
+      </section>
+
+      <section class="widget seguridad">
+        <div class="widget-image"></div>
+        <div class="widget-content">
+          <h2>🚨Seguridad</h2>
+          <p class="value alerta">Alarma Activada</p>
+        </div>
+      </section>
+
+      <section class="widget musica">
+        <div class="widget-image"></div>
+        <div class="widget-content">
+          <h2>🎵Música</h2>
+          <p class="value">Reproduciendo: Chill Vibes</p>
+          <div class="player-controls">
+            <button type="button">⏮</button>
+            <button type="button">⏯</button>
+            <button type="button">⏭</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="widget recordatorios">
+        <div class="widget-image"></div>
+        <div class="widget-content">
+          <h2>🗒️Recordatorios</h2>
+          <ul class="lista-recordatorios">
+              <li>- Regar las plantas</li>
+              <li>- Apagar luces del jardín</li>
+              <li>- Revisar alarma</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+</div>
+
+</body>
+</html>
